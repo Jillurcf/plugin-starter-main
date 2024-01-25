@@ -1,0 +1,10 @@
+{
+  "name": "***Plugin name***",
+  "category": "***Plugin category***",
+  "imageUrl": "***Plugin imageUrl***",
+  "type": "default",
+  "isDynamic": false,
+  "initConfig": {},
+  "sortOrder": 100000,
+  "visibility": "internal"
+}

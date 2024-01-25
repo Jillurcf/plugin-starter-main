@@ -1,0 +1,43 @@
+{
+  "name": "pg-plugin-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf dist && EXT_DEPS='../../block-external-deps.json' LIB_ENTRY_NAME='block' LIB_ENTRY_PATH='src/index.block.tsx' vite build --config vite.build.config.js && EXT_DEPS='../../block-config-external-deps.json' LIB_ENTRY_NAME='block-configurer' LIB_ENTRY_PATH='src/index.block-configurer.tsx' vite build --config vite.build.config.js",
+    "dev": "vite",
+    "serve": "yarn build && serve dist --cors",
+    "setup": "rm -rf .git && rm yarn.lock",
+    "gen::config-schema": "ts-node -e 'const r=require,t=r(`./src/block-configurer.ts`);console.log(r(`@productgenie/plugin-config-utils`).genConfigSchema(t.configurer,t.optionals));' > src/block-config.ts && prettier src/block-config.ts -w"
+  },
+  "keywords": [],
+  "author": "Varun Pujari",
+  "license": "ISC",
+  "resolutions": {
+    "@productgenie/plugin-config-utils/@productgenie/plugin-bridge": "^1.8.2"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@productgenie/datasource": "^1.4.0",
+    "@productgenie/plugin-bridge": "^1.9.0",
+    "@productgenie/plugin-config-utils": "1.12.2",
+    "lodash": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.1",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^3.1.0",
+    "css": "^3.0.0",
+    "prettier": "3.0.3",
+    "rollup-plugin-visualizer": "^5.9.2",
+    "serve": "^14.2.0",
+    "typescript": "^4.9.5",
+    "typescript-plugin-css-modules": "^5.0.2",
+    "vite": "^4.1.1",
+    "vite-plugin-css-injected-by-js": "^3.3.0"
+  }
+}
