@@ -2,7 +2,7 @@ import { z } from "zod";
 
 const catchValue = {} as never;
 
-export const configSchema = z.object({
+export const configSchemas = z.object({
   settings: z
     .object({ name: z.string().optional(), tag: z.string().optional(), Image: z.string().optional() })
     .optional(),
@@ -10,4 +10,4 @@ export const configSchema = z.object({
   icon: z.string(),
 });
 
-export type Config = z.infer<typeof configSchema>;
+export type Configs = z.infer<typeof configSchemas>;

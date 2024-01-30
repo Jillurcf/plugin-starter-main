@@ -21,6 +21,7 @@ const BlockConfigurer: React.FC<ConfigurerComponentProps> = ({
       }}
       addChild={addChild}
     />
+    
   );
 };
 

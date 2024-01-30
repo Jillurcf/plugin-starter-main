@@ -1,14 +1,14 @@
 import React from "react";
-import type { Config } from "./block-config";
+import type { Configs } from "./block-config-one";
 import { css } from "@emotion/react";
 
-const Block: React.FC<{ config: Config }> = ({ config }) => {
+const BlockOne: React.FC<{ config: Configs }> = ({ config }) => {
   return (
     <div
-      css={css({ display: "flex", backgroundColor: "black", color: "white" })}
+      css={css({ display: "flex", backgroundColor: "Yellow", color: "black", textAlign: "left" })}
     >
       <span
-        css={css({ padding: "1rem", fontSize: "4rem" })}
+        css={css({ padding: "1rem", fontSize: "4rem", textAlign: "left" })}
         className="material-icons-outlined"
       >
         {config.icon}
@@ -17,17 +17,19 @@ const Block: React.FC<{ config: Config }> = ({ config }) => {
         css={css({
           display: "flex",
           alignItems: "center",
-          fontSize: "1.5rem",
+          fontSize: "2.5rem",
           flex: 1,
           padding: "1rem",
-          textAlign: "center"
+          textAlign:"left"
+          // textAlign: "start",
         })}
       >
         <span>{config.text}</span>
+        
       </div>
       
     </div>
   );
 };
 
-export default Block;
+export default BlockOne;

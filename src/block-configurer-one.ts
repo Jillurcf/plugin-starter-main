@@ -5,7 +5,7 @@ import {
 
 export const optionals: ConfigurerOptionalPaths = [["settings"]];
 
-export const configurer: Configurer = {
+export const configurerOne: Configurer = {
 
   name: "Text",
   screens: [
